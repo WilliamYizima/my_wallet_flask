@@ -16,6 +16,7 @@ This application has some cool features implemented:
 Required to implement:
 - flask migrate
 - flask auth
+
 # Run
 
 1. create a virtual env:
