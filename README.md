@@ -1,19 +1,21 @@
 first commit
 
 # Description
-
+api to integrate with a react application
 
 # Contains
+
 This application has some cool features implemented:
-    - flask CLI
-    - flask SQLite
-    - flask SQL-Alchemy
-    - Makefile -> a tool that can help like npm start and npm install packges
-    - python-dotenv
-    - factory-structure to flask (avoid relative improts)
+- flask CLI
+- flask SQLite
+- flask SQL-Alchemy
+- Makefile -> a tool that can help like npm start and npm install packges
+- python-dotenv
+- factory-structure to flask (avoid relative improts)
 
 Required to implement:
-    - flask migrate
+- flask migrate
+- flask auth
 # Run
 
 1. create a virtual env:
