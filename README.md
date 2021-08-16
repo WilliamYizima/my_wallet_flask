@@ -38,5 +38,5 @@ echo "SECRET_KEY='xxx'" > ./wallet/.env
 flask create-db
 flask list-gains
 #lista de usuários vazia
-flask add-user -de="testando" -am=5.1"
+flask add-user -de="testando" -am=5.1
 ```
