@@ -9,11 +9,11 @@ api to integrate with a react application
 
 This application has some cool features implemented:
 - flask CLI
-- flask SQLite
-- flask SQL-Alchemy
+- flask SQL-Alchemy/SQLite
 - Makefile -> a tool that can help like npm start and npm install packges
 - python-dotenv
-- factory-structure to flask (avoid relative improts)
+- factory-structure to flask (avoid circular improts)
+- dataclass 
 - [] api request
 - [] api 
 - [] hook

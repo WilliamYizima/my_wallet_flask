@@ -1,14 +1,12 @@
 from dataclasses import dataclass
-
+import datetime
 
 @dataclass
 class Gain:
+    """dataclass for manipulate services payload"""
     description: str
     amount: float
-    date: str
+    date: datetime = datetime.datetime.utcnow()
 
-    def formatted_date(self):
-        return self.date.strftime("%m/%d/%Y")
-
-teste = Gain(description="BT",amount=50.2,date="25-11")
-print(teste.amount)
+    def __post_init__(self):
+        self.date = self.date.strftime("%m/%d/%Y")

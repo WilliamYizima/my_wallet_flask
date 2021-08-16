@@ -17,11 +17,10 @@ class Gains(db.Model):
 
     @staticmethod
     def add_gains(description:str, amount:float):
-        """Add us
-
+        """Add gains
         Args:
-            description (str): [description]
-            amount (float): [description]
+            description (str): descr iption of gains
+            amount (float): valeus of amount
         """
         gain = Gains( 
                 description=description,
