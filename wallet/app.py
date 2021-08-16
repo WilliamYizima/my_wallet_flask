@@ -8,3 +8,4 @@ def create_app():
 
     config.init_app(app)
     db.init_app(app)
+    return app

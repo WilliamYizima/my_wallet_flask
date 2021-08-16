@@ -15,3 +15,8 @@ source ENV/bin/activate
 ```bash
 make install
 ```
+
+3. Create a .env:
+```bash
+echo "SECRET_KEY='xxx'" > ./wallet/.env
+```
