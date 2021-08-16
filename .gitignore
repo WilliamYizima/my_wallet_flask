@@ -1,3 +1,4 @@
 .env
 __pycache__
 wallet.egg-info
+*.db

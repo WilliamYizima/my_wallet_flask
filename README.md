@@ -3,6 +3,8 @@ first commit
 # Description
 api to integrate with a react application
 
+**obs:Para que não se tenha problemas de [circular imports python](https://stackoverflow.com/questions/744373/circular-or-cyclic-imports-in-python) e melhor organização da app, foi implementado o pattern factory**
+
 # Contains
 
 This application has some cool features implemented:
@@ -12,10 +14,16 @@ This application has some cool features implemented:
 - Makefile -> a tool that can help like npm start and npm install packges
 - python-dotenv
 - factory-structure to flask (avoid relative improts)
+- [] api request
+- [] api 
+- [] hook
+- [] docker
+- [] comments for all
 
 Required to implement:
-- flask migrate
-- flask auth
+- flask migrate(migrate)
+- flask auth(authorization)
+- flask marshmallow (serialize)
 
 
 # Run
