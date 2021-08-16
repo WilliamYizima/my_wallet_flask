@@ -14,5 +14,4 @@ def create_app():
     db.init_app(app)
     cli.init_app(app)
     api.init_app(app)
-    
     return app
