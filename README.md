@@ -34,6 +34,8 @@ Required to implement:
 
 # Structure
 
+
+```
 .gitignore
 Makefile  
 requirements-dev.txt 
@@ -52,6 +54,7 @@ setup.py
 ├── .env
 ├── bundle_api
 └── app.py
+```
 
 modules:
 - api -> routes and services
