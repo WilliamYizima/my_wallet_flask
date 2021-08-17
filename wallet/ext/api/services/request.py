@@ -10,14 +10,15 @@ class Cripto(Enum):
     bitcoin = 'BTC'
     chainlink = 'LINK'
 
-def request_mercadoBtc(cripto:Cripto,n_day_past:int=1):
-    """Request in API MercadoBTC for data yesterday
+def request_mercadoBtc(cripto:Cripto,n_day_past:int=0)->list:
+    """Request in API MercadoBTC for data yesterday(default)
 
     Args:
         cripto (Cripto): [type of cripto: bitcoin or chainlink]
+        n_day_past (int): [past days , 0 = yesterday]
     """
     today = datetime.date.today()
-    yesterday = today - datetime.timedelta(days=n_day_past)
+    yesterday = today - datetime.timedelta(days=n_day_past+1)
     
     date_today_for_url = f"{yesterday.year}/{yesterday.month}/{yesterday.day}"
     coin = Cripto[cripto].value
@@ -26,24 +27,27 @@ def request_mercadoBtc(cripto:Cripto,n_day_past:int=1):
                             f'https://www.mercadobitcoin.net/api/{coin}/day-summary/{date_today_for_url}/'
                             )
     response = request.json()
-    data = json.dumps(response)
-    # closing , date = response.closing, response.date
-    # return closing , date
-    return data
+    [closing , date] = response['closing'], response['date']
+    return [closing , date]
 
-def bulk_insert_db(cripto:Cripto, n_data:int = 3 ):
+def bulk_insert_db(cripto:Cripto, n_data:int = 3 )-> dict:
     """get data in api and return quantity:n_data 
 
     Args:
         cripto (Cripto): [type of cripto: bitcoin or chainlink]
         n_data (int): [quantity last days]
+    return dict
     """
     list_cripto_data = []
     for i in range(n_data):
+        amount, date = request_mercadoBtc(cripto=cripto, 
+                                    n_day_past=(i))
+        # transform in datetime ->for dataclass
+        # formatted_date = datetime.datetime.strptime(date, '%Y-%m-%d')
 
-        request = request_mercadoBtc(cripto=cripto, 
-                                    n_day_past=n_data)
         gain_request = Gain(description=cripto,
-                            amount=request.closing)
+                            amount=amount,
+                            date=date)
+        list_cripto_data.append(gain_request)
         
-    return request_mercadoBtc()
+    return {'result':list_cripto_data}
