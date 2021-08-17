@@ -66,7 +66,15 @@ files:
 - bundle_api -> insomnia collection for tests
 - app.py -> initial file
 
-# Run
+# Run(dockerfile)
+- run the image and jump for step 5
+```bash
+#example
+docker build -t williamyizima/api-flask-crip
+docker run --network=host -p 5000:5000 williamyizima/api-flask-crip
+```
+
+# Run(no dockerfile)
 
 1. create a virtual env:
 In the your path(linux)
