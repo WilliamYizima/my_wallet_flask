@@ -3,6 +3,7 @@ flask-sqlalchemy
 flask-migrate
 flask-admin
 python-dotenv
+requests
 
 [dev]
 black

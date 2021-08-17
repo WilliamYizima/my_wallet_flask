@@ -13,14 +13,14 @@ def init_app(app):
         click.echo("criei a tabela conforme solicitado")
 
     @app.cli.command()
-    def list_gains():
+    def list_db():
         """Neste comando estou mostrando os registros"""
         gains = Gains.query.all()
         if(len(gains) == 0):
-            click.echo(f"lista de usuários vazia")
+            click.echo(f"lista de registros vazia")
         else:
             gain_attributes = [gain.to_json() for gain in gains]
-            click.echo(f"lista de usuários {gain_attributes}")
+            click.echo(f"lista de registros: {gain_attributes}")
         
 
     @app.cli.command()

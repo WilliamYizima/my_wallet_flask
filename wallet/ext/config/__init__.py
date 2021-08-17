@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join('./wallet', '.env'))
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY") if (
+            load_dotenv(os.path.join('./wallet', '.env'))
+            ) else 'xxx'
 
 def init_app(app):
     app.config["SECRET_KEY"] = SECRET_KEY
